@@ -2,7 +2,9 @@ version: '3'
 
 services:
   db:
-    image: postgres:14.2
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
       - type: volume
         source: postgres-data
@@ -16,7 +18,6 @@ services:
       POSTGRES_PASSWORD: postgres
       LANG: ja_JP.utf8
       LC_ALL: en_US.utf-8
-    working_dir: /workspace
 
 volumes:
   postgres-data:
