@@ -4,7 +4,12 @@ services:
   db:
     image: postgres:14.2
     volumes:
-      - postgres-data:/var/lib/postgresql/data
+      - type: volume
+        source: postgres-data
+        target: /var/lib/postgresql/data
+      - type: bind
+        source: ../
+        target: /workspace
     environment:
       POSTGRES_USER: postgres
       POSTGRES_DB: postgres
