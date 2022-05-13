@@ -11,3 +11,5 @@
   * `postgres:14.2`
 * `Visual Studio Code`
   * 拡張機能: `Remote - Container`
+
+`postgres` の Docker Image 内で `SQL` を直接実行する
