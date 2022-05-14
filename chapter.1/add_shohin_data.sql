@@ -1,4 +1,4 @@
--- DML: データ登録
+-- DML(Data Manipulation Language): データ登録
 begin transaction;
 
 insert into
