@@ -2,5 +2,10 @@
     "name": "PostgreSQL",
     "dockerComposeFile": "docker-compose.yml",
     "service": "db",
-    "workspaceFolder": "/workspace"
+    "workspaceFolder": "/workspace",
+
+    "extensions": [
+        "ckolkman.vscode-postgres",
+        "adpyke.vscode-sql-formatter"
+    ]
 }
