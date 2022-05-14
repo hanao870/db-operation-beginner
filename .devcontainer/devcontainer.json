@@ -6,6 +6,7 @@
 
     "extensions": [
         "ckolkman.vscode-postgres",
-        "adpyke.vscode-sql-formatter"
+        "adpyke.vscode-sql-formatter",
+        "donjayamanne.githistory"
     ]
 }
