@@ -29,7 +29,7 @@ values
 insert into
     shohin
 values
-('0006', 'フォーク', 'キッチン用品', 500, null, '2009-01-20');
+('0006', 'フォーク', 'キッチン用品', 500, null, '2009-09-20');
 
 insert into
     shohin
