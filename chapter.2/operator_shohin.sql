@@ -4,3 +4,11 @@ select
     hanbai_tanka * 2 as "hanbai_tanka_x2"
 from
     shohin;
+
+select
+    shohin_mei,
+    shohin_bunrui
+from
+    shohin
+where
+    hanbai_tanka = 500;
