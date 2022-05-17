@@ -25,3 +25,13 @@ where
     shohin_bunrui = '衣服'
 group by
     shiire_tanka;
+
+-- group by に指定していない列名を select に設定できない
+-- select
+--     shiire_tanka,
+--     shohin_mei,
+--     count(*)
+-- from
+--     shohin
+-- group by
+--     shiire_tanka;
