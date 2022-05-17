@@ -45,3 +45,24 @@ having
 --     shohin_bunrui
 -- having
 --     shohin_mei = 'ボールペン';
+
+select
+    shohin_bunrui,
+    count(*)
+from
+    shohin
+group by
+    shohin_bunrui
+having
+    shohin_bunrui = '衣服';
+
+-- 上記 SQL と同じ結果を返す
+select
+    shohin_bunrui,
+    count(*)
+from
+    shohin
+where
+    shohin_bunrui = '衣服'
+group by
+    shohin_bunrui;
