@@ -35,3 +35,14 @@ group by
 --     shohin
 -- group by
 --     shiire_tanka;
+
+-- as キーワードの別名を group by に指定
+-- from -> group by -> select の順で実行されるため、as の別名は DBMS では未定義の状態
+-- PostgreSQL ではエラーにならないが、他の DBMS では通じない
+select
+    shohin_bunrui as sb,
+    count(*)
+from
+    shohin
+group by
+    sb;
