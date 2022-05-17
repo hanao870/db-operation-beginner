@@ -15,3 +15,13 @@ from
     shohin
 group by
     shiire_tanka;
+
+select
+    shiire_tanka,
+    count(*)
+from
+    shohin
+where
+    shohin_bunrui = '衣服'
+group by
+    shiire_tanka;
