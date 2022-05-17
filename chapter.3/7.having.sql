@@ -16,3 +16,21 @@ from
     shohin
 group by
     shohin_bunrui;
+
+select
+    shohin_bunrui,
+    avg(hanbai_tanka)
+from
+    shohin
+group by
+    shohin_bunrui;
+
+select
+    shohin_bunrui,
+    avg(hanbai_tanka)
+from
+    shohin
+group by
+    shohin_bunrui
+having
+    avg(hanbai_tanka) >= 2500;
