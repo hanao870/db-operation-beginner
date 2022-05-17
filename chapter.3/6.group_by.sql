@@ -46,3 +46,14 @@ from
     shohin
 group by
     sb;
+
+-- where 句に集約関数は記述できずエラーとなる
+select
+    shohin_bunrui,
+    count(*)
+from
+    shohin
+where
+    count(*) = 2
+group by
+    shohin_bunrui;
