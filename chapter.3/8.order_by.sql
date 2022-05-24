@@ -66,3 +66,14 @@ from
     shohin
 order by
     shohin_id;
+
+-- 集約関数の order by
+select
+    shohin_bunrui,
+    count(*)
+from
+    shohin
+group by
+    shohin_bunrui
+order by
+    count(*);
