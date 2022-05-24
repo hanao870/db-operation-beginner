@@ -12,6 +12,7 @@ group by
 where
     torokubi > '2009-09-01';
 
+-- 練習問題 3.2
 select
     shohin_bunrui,
     sum(hanbai_tanka),
@@ -22,3 +23,12 @@ group by
     shohin_bunrui
 having
     sum(hanbai_tanka) > sum(shiire_tanka) * 1.5;
+
+-- 練習問題 3.3
+select
+    *
+from
+    shohin
+order by
+    torokubi desc,
+    hanbai_tanka;
