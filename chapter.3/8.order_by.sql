@@ -42,3 +42,17 @@ from
     shohin
 order by
     shiire_tanka;
+
+-- 別名による order by
+-- BDMS の大まかな実行順序: from -> where -> group by -> having -> select -> order by
+-- order by は select より後で実行されるため別名が使用可能
+select
+    shohin_id as id,
+    shohin_mei,
+    hanbai_tanka as ht,
+    shiire_tanka
+from
+    shohin
+order by
+    ht,
+    id;
