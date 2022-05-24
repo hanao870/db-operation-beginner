@@ -56,3 +56,13 @@ from
 order by
     ht,
     id;
+
+-- select に含まれない列名の order by
+select
+    shohin_mei,
+    hanbai_tanka,
+    shiire_tanka
+from
+    shohin
+order by
+    shohin_id;
