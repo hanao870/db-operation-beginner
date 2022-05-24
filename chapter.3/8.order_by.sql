@@ -77,3 +77,30 @@ group by
     shohin_bunrui
 order by
     count(*);
+
+-- 列番号による order by
+-- 以下の理由により使用しないこと!!
+-- 可読性が悪い
+-- SQL-92 において、将来削除されるべき機能に挙げられている
+select
+    shohin_id,
+    shohin_mei,
+    hanbai_tanka,
+    shiire_tanka
+from
+    shohin
+order by
+    3 desc,
+    1;
+
+-- 上記 SQL は以下と同じ
+-- select
+--     shohin_id,
+--     shohin_mei,
+--     hanbai_tanka,
+--     shiire_tanka
+-- from
+--     shohin
+-- order by
+--     hanbai_tanka desc,
+--     shohin_id;
