@@ -11,3 +11,14 @@ group by
     shohin_bunrui
 where
     torokubi > '2009-09-01';
+
+select
+    shohin_bunrui,
+    sum(hanbai_tanka),
+    sum(shiire_tanka)
+from
+    shohin
+group by
+    shohin_bunrui
+having
+    sum(hanbai_tanka) > sum(shiire_tanka) * 1.5;
