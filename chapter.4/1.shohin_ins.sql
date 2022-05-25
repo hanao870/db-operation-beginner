@@ -244,3 +244,30 @@ select
     *
 from
     shohin;
+
+-- 動作確認のために ShohinBunrui テーブル削除
+drop table ShohinBunrui;
+
+-- 商品分類毎にまとめたテーブル
+create table ShohinBunrui (
+    shohin_bunrui varchar(32) not null,
+    sum_hanbai_tanka integer,
+    sum_shiire_tanka integer,
+    primary key (shohin_bunrui)
+);
+
+-- 商品分類毎のテーブルデータをコピー
+insert into
+    ShohinBunrui (
+        shohin_bunrui,
+        sum_hanbai_tanka,
+        sum_shiire_tanka
+    )
+select
+    shohin_bunrui,
+    sum(hanbai_tanka),
+    sum(shiire_tanka)
+from
+    shohin
+group by
+    shohin_bunrui;
