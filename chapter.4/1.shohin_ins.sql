@@ -20,3 +20,17 @@ insert into
     )
 values
     ('0001', 'Tシャツ', '衣服', 1000, 500, '2009-09-20');
+
+-- 列リストと値リストの数が不一致だとエラー
+-- デフォルト値を設定している列を値リストで飛ばしてもエラーとなる
+-- insert into
+--     shohinins (
+--         shohin_id,
+--         shohin_mei,
+--         shohin_bunrui,
+--         hanbai_tanka,
+--         shiire_tanka,
+--         torokubi
+--     )
+-- values
+--     ('0002', 'Yシャツ', '衣服', 3000, '2009-09-20');
