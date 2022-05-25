@@ -6,4 +6,17 @@ create table shohinins (
     shiire_tanka integer,
     torokubi date,
     primary key (shohin_id)
-)
+);
+
+-- shohinins のデータ登録
+insert into
+    shohinins (
+        shohin_id,
+        shohin_mei,
+        shohin_bunrui,
+        hanbai_tanka,
+        shiire_tanka,
+        torokubi
+    )
+values
+    ('0001', 'Tシャツ', '衣服', 1000, 500, '2009-09-20');
