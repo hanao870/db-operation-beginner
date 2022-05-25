@@ -157,7 +157,10 @@ values
     );
 
 -- 動作確認の為に一旦削除
-delete from shohinins where shohin_id = '0007';
+delete from
+    shohinins
+where
+    shohin_id = '0007';
 
 -- 暗黙的な default 値の挿入. 列リストで列名を省略する
 insert into
@@ -175,4 +178,40 @@ values
         'キッチン用品',
         790,
         '2009-04-28'
+    );
+
+-- default 値が設定されていない列を省略すると null が割り当てられる
+insert into
+    shohinins (
+        shohin_id,
+        shohin_mei,
+        shohin_bunrui,
+        hanbai_tanka,
+        torokubi
+    )
+values
+    (
+        '0008',
+        'ボールペン',
+        '事務用品',
+        100,
+        '2009-11-11'
+    );
+
+-- not null が指定されている列を省略するとエラーとなる
+insert into
+    shohinins (
+        shohin_id,
+        shohin_bunrui,
+        hanbai_tanka,
+        shiire_tanka,
+        torokubi
+    )
+values
+    (
+        '0009',
+        '事務用品',
+        1000,
+        500,
+        '2009-12-12'
     );
