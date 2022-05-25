@@ -108,6 +108,7 @@ values
 --     )
 -- values
 --     ('0005', '圧力鍋', 'キッチン用品', 6800, 5000, '2009-01-15');
+
 -- null の登録. not null の列で指定するとエラーとなる
 insert into
     shohinins
@@ -121,3 +122,16 @@ values
         '2009-09-20'
     );
 --    ('0007', 'ミキサー', null, 3000, null, '2009-09-20');
+
+-- 明示的な default 値の使用
+insert into
+    shohinins (
+        shohin_id,
+        shohin_mei,
+        shohin_bunrui,
+        hanbai_tanka,
+        shiire_tanka,
+        torokubi
+    )
+values
+    ('0007', 'おろしがね', 'キッチン用品', default, 790, '2009-04-28');
