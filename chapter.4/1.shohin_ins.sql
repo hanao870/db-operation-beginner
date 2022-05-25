@@ -108,7 +108,6 @@ values
 --     )
 -- values
 --     ('0005', '圧力鍋', 'キッチン用品', 6800, 5000, '2009-01-15');
-
 -- null の登録. not null の列で指定するとエラーとなる
 insert into
     shohinins
@@ -121,8 +120,8 @@ values
         null,
         '2009-09-20'
     );
---    ('0007', 'ミキサー', null, 3000, null, '2009-09-20');
 
+--    ('0007', 'ミキサー', null, 3000, null, '2009-09-20');
 -- 明示的な default 値の使用
 insert into
     shohinins (
@@ -134,4 +133,25 @@ insert into
         torokubi
     )
 values
-    ('0007', 'おろしがね', 'キッチン用品', default, 790, '2009-04-28');
+    (
+        '0007',
+        'おろしがね',
+        'キッチン用品',
+        default,
+        790,
+        '2009-04-28'
+    );
+
+-- default が指定されていない列で default を指定すると null が入る
+-- not null かつ default を指定していない列での default はエラーとなる
+insert into
+    shohinins
+values
+    (
+        '0008',
+        'ミキサー',
+        default,
+        3000,
+        default,
+        '2009-04-28'
+    );
