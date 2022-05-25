@@ -155,3 +155,24 @@ values
         default,
         '2009-04-28'
     );
+
+-- 動作確認の為に一旦削除
+delete from shohinins where shohin_id = '0007';
+
+-- 暗黙的な default 値の挿入. 列リストで列名を省略する
+insert into
+    shohinins (
+        shohin_id,
+        shohin_mei,
+        shohin_bunrui,
+        shiire_tanka,
+        torokubi
+    )
+values
+    (
+        '0007',
+        'おろしがね',
+        'キッチン用品',
+        790,
+        '2009-04-28'
+    );
