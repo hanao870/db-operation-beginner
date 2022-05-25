@@ -34,7 +34,6 @@ values
 --     )
 -- values
 --     ('0002', 'Yシャツ', '衣服', 3000, '2009-09-20');
-
 -- 複数行 insert
 insert into
     shohinins (
@@ -62,7 +61,6 @@ values
 --     )
 -- values
 --     ('0002', '穴あけパンチ', '事務用品', 500, 320, '2009-09-11');
-
 -- insert into
 --     shohinins (
 --         shohin_id,
@@ -74,7 +72,6 @@ values
 --     )
 -- values
 --     ('0003', 'カッターシャツ', '衣服', 4000, 2800, null);
-
 -- insert into
 --     shohinins (
 --         shohin_id,
@@ -86,3 +83,21 @@ values
 --     )
 -- values
 --     ('0004', '包丁', 'キッチン用品', 3000, 2800, '2009-09-20');
+
+-- 列リストの省略. 全列の値リストが必要
+insert into
+    shohinins
+values
+    ('0005', '圧力鍋', 'キッチン用品', 6800, 5000, '2009-01-15');
+-- 上記と同じ insert
+-- insert into
+--     shohinins (
+--         shohin_id,
+--         shohin_mei,
+--         shohin_bunrui,
+--         hanbai_tanka,
+--         shiire_tanka,
+--         torokubi
+--     )
+-- values
+--     ('0005', '圧力鍋', 'キッチン用品', 6800, 5000, '2009-01-15');
