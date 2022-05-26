@@ -11,3 +11,19 @@ set
     hanbai_tanka = hanbai_tanka * 10
 where
     shohin_bunrui = 'キッチン用品';
+
+-- 上記 SQL の更新を元に戻す
+update
+    shohin
+set
+    hanbai_tanka = hanbai_tanka / 10
+where
+    shohin_bunrui = 'キッチン用品';
+
+-- null クリア
+update
+    shohin
+set
+    torokubi = null
+where
+    shohin_id = '0008';
