@@ -27,3 +27,29 @@ set
     torokubi = null
 where
     shohin_id = '0008';
+
+-- 複数列の update
+update
+    shohin
+set
+    hanbai_tanka = hanbai_tanka * 10,
+    shiire_tanka = shiire_tanka / 2
+where
+    shohin_bunrui = 'キッチン用品';
+
+-- 上記 SQL と同じ update
+update
+    shohin
+set
+    (hanbai_tanka, shiire_tanka) = (hanbai_tanka * 10, shiire_tanka / 2)
+where
+    shohin_bunrui = 'キッチン用品';
+
+-- 上記 SQL の update を元に戻す
+update
+    shohin
+set
+    hanbai_tanka = hanbai_tanka / 100,
+    shiire_tanka = shiire_tanka * 4
+where
+    shohin_bunrui = 'キッチン用品';
