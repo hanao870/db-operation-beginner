@@ -38,6 +38,7 @@ where
     shohin_bunrui = 'キッチン用品';
 
 -- 上記 SQL と同じ update
+-- 但し、この SQL は PostgreSQL と DB2 でのみ利用可能
 update
     shohin
 set
