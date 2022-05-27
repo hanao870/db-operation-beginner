@@ -47,3 +47,28 @@ select
     (hanbai_tanka - shiire_tanka)
 from
     ShohinCopy;
+
+-- 4.4 の SQL
+-- カッターシャツの販売単価変更
+update
+    ShohinSaeki
+set
+    hanbai_tanka = 3000
+where
+    shohin_mei = 'カッターシャツ';
+
+-- 差益の計算
+update
+    ShohinSaeki
+set
+    saeki = hanbai_tanka - shiire_tanka
+where
+    shohin_mei = 'カッターシャツ';
+
+-- 4.4 の結果確認
+select
+    *
+from
+    ShohinSaeki
+order by
+    shohin_id;
