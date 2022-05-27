@@ -31,3 +31,25 @@ select
     *
 from
     ShohinSumJim;
+
+-- 動作確認のために ShohinSum ビューを削除
+-- 依存関係にあるビューも合わせて削除する cascade を使用
+drop view ShohinSum cascade;
+
+-- view 作成に order by は使用不可
+-- PostgreSQL 14.2 では view が作成される
+create view ShohinSum (shohin_bunrui, cnt_shohin) as
+select
+    shohin_bunrui,
+    count(*)
+from
+    Shohin
+group by
+    shohin_bunrui
+order by
+    shohin_bunrui;
+
+select
+    *
+from
+    ShohinSum;
