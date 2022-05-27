@@ -12,4 +12,6 @@ group by
 select
     *
 from
-    ShohinSum;
+    ShohinSum
+order by
+    cnt_shohin;
