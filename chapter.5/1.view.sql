@@ -53,3 +53,57 @@ select
     *
 from
     ShohinSum;
+
+-- 更新可能な view を作成
+-- view に集約関数、結合(group by)、複数テーブル指定などをしなければ更新は可能
+create view ShohinJim (
+    shohin_id,
+    shohin_mei,
+    shohin_bunrui,
+    hanbai_tanka,
+    shiire_tanka,
+    torokubi
+) as -- 集約や結合のない select
+select
+    *
+from
+    Shohin
+where
+    shohin_bunrui = '事務用品';
+
+-- view の条件に当てはまるデータ(shohin_bunrui = '事務用品')を登録
+insert into
+    ShohinJim
+values
+    ('0009', '印鑑', '事務用品', 95, 10, '2009-11-30');
+
+-- view の条件に当てはまらないデータ(shohin_bunrui = 'キッチン用品')も登録可能
+insert into
+    ShohinJim
+values
+    (
+        '0010',
+        'ミキサー',
+        'キッチン用品',
+        8000,
+        5500,
+        '2009-10-25'
+    );
+
+-- view のデータ登録確認
+-- shohin_id = '0010' のデータは表示されない
+select
+    *
+from
+    ShohinJim
+order by
+    shohin_id;
+
+-- Shohin テーブルのデータ登録確認
+-- shohin_id が 0009 と 0010 のデータが登録されている
+select
+    *
+from
+    Shohin
+order by
+    shohin_id;
