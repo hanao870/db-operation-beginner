@@ -47,3 +47,27 @@ where
     )
 order by
     shohin_id;
+
+-- 結合条件の記述位置を変更
+-- この SQL はエラーとなる
+select
+    shohin_id,
+    shohin_bunrui,
+    shohin_mei,
+    hanbai_tanka
+from
+    Shohin as S1
+where
+    -- 結合条件をサブクエリ外に移動
+    -- 相関名 S2 はサブクエリでのみ有効なためエラーとなる
+    S1.shohin_bunrui = S2.shohin_bunrui
+    and hanbai_tanka > (
+        select
+            avg(hanbai_tanka)
+        from
+            Shohin as S2
+        group by
+            shohin_bunrui
+    )
+order by
+    shohin_id;
