@@ -55,3 +55,14 @@ from
         where
             cnt_shohin = 4
     ) as ShohinSum2;
+
+-- 販売単価が全体の平均より販売単価より高い商品を検索
+select
+    shohin_id,
+    shohin_mei,
+    hanbai_tanka
+from
+    Shohin
+where
+--集約関数は where 句では使用できないのでエラーとなる
+    hanbai_tanka > avg(hanbai_tanka);
