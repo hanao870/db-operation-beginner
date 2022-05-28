@@ -34,6 +34,7 @@ from
     ) as ShohinSum;
 
 -- サブクエリの入れ子構造
+-- 階層を深くするとパフォーマンス低下を招く
 select
     shohin_bunrui,
     cnt_shohin
