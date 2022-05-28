@@ -116,3 +116,21 @@ having
     )
 order by
     avg(hanbai_tanka);
+
+-- スカラ・サブクエリは必ず複数行を返さないこと
+-- 以下の SQL はエラーとなる
+select
+    shohin_id,
+    shohin_mei,
+    hanbai_tanka,
+    -- 複数行を返すサブクエリのためエラーとなる
+    (
+        select
+            avg(hanbai_tanka)
+        from
+            Shohin
+        group by
+            shohin_bunrui
+    ) as avg_tanka
+from
+    Shohin;
