@@ -15,3 +15,9 @@ select
     *
 from
     ViewRenshu5_1;
+
+-- 5.2 の SQL. 主キーがないのでデータ登録失敗する
+insert into
+    ViewRenshu5_1
+values
+    ('ナイフ', 300, '2009-11-02');
