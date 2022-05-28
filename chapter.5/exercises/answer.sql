@@ -21,3 +21,18 @@ insert into
     ViewRenshu5_1
 values
     ('ナイフ', 300, '2009-11-02');
+
+-- 5.3 の SQL
+select
+    shohin_id,
+    shohin_mei,
+    shohin_bunrui,
+    hanbai_tanka,
+    (
+        select
+            avg(hanbai_tanka)
+        from
+            shohin
+    ) as hanbai_tanka_all
+from
+    Shohin;
