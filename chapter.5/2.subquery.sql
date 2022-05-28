@@ -32,3 +32,25 @@ from
         group by
             shohin_bunrui
     ) as ShohinSum;
+
+-- サブクエリの入れ子構造
+select
+    shohin_bunrui,
+    cnt_shohin
+from
+    (
+        select
+            *
+        from
+            (
+                select
+                    shohin_bunrui,
+                    count(*) as cnt_shohin
+                from
+                    shohin
+                group by
+                    shohin_bunrui
+            ) as ShohinSum
+        where
+            cnt_shohin = 4
+    ) as ShohinSum2;
