@@ -12,3 +12,11 @@ select
     mod(n, p) as mod_col
 from
     SampleMath;
+
+-- ROUND(四捨五入) 関数
+select
+    m,
+    n,
+    round(m, n)
+from
+    SampleMath;
