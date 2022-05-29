@@ -28,3 +28,10 @@ select
     lower(str1) as low_str
 from
     SampleStr;
+
+-- UPPER(大文字変換)
+select
+    str1,
+    upper(str1) as up_str
+from
+    SampleStr;
