@@ -35,3 +35,12 @@ select
     upper(str1) as up_str
 from
     SampleStr;
+
+-- REPLACE(文字列置換)
+select
+    str1,
+    str2,
+    str3,
+    REPLACE(str1, str2, str3) as "REPLACE(str1, str2, str3)"
+from
+    SampleStr;
