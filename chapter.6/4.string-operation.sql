@@ -44,3 +44,15 @@ select
     REPLACE(str1, str2, str3) as "REPLACE(str1, str2, str3)"
 from
     SampleStr;
+
+-- SUBSTRING(文字列切り出し)
+select
+    str1,
+    -- str1 の 3 文字目から 2 文字を切り出す
+    SUBSTRING(
+        str1
+        from
+            3 for 2
+    ) as "SUBSTRING(str1 from 3 for 2)"
+from
+    SampleStr;
