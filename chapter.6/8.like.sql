@@ -14,3 +14,11 @@ from
     SampleLike
 where
     strcol like '%ddd%';
+
+-- 後方一致
+select
+    *
+from
+    SampleLike
+where
+    strcol like '%ddd';
