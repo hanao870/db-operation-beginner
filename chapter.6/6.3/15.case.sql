@@ -9,6 +9,19 @@ select
 from
     Shohin;
 
+-- 上記 SQL を単純 CASE 式で記述
+select
+    shohin_mei,
+    case
+        shohin_bunrui
+        when '衣服' then 'A:' || shohin_bunrui
+        when '事務用品' then 'B:' || shohin_bunrui
+        when 'キッチン用品' then 'C:' || shohin_bunrui
+        else null
+    end as abc_shohin_bunrui
+from
+    Shohin;
+
 -- 商品分類毎の販売単価の合計
 select
     shohin_bunrui,
