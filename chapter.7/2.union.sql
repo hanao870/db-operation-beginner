@@ -28,3 +28,33 @@ from
     Shohin2
 order by
     shohin_id;
+
+-- 列のデータ型が一致している
+select
+    shohin_id,
+    shohin_mei
+from
+    Shohin
+union
+select
+    shohin_id,
+    hanbai_tanka
+from
+    Shohin2
+order by
+    shohin_id;
+
+-- 列のデータ型が一致していれば異なる列を指定可能
+select
+    shohin_id,
+    shohin_mei
+from
+    Shohin
+union
+select
+    shohin_id,
+    shohin_bunrui
+from
+    Shohin2
+order by
+    shohin_id;
