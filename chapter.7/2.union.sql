@@ -77,3 +77,17 @@ where
     shohin_bunrui = 'キッチン用品'
 order by
     shohin_id;
+
+-- 重複を排除しない
+select
+    shohin_id,
+    shohin_mei
+from
+    Shohin
+union
+all
+select
+    shohin_id,
+    shohin_mei
+from
+    Shohin2;
