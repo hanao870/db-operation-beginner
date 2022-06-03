@@ -7,4 +7,6 @@ select
     S.hanbai_tanka
 from
     TenpoShohin as TS
-    inner join Shohin as S on TS.shohin_id = S.shohin_id;
+    inner join Shohin as S on TS.shohin_id = S.shohin_id
+where
+    TS.tenpo_id = '000A';
