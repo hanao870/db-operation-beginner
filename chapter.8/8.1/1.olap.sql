@@ -26,3 +26,23 @@ select
     ) as ranking
 from
     Shohin;
+
+select
+    shohin_id,
+    shohin_mei,
+    shohin_bunrui,
+    hanbai_tanka,
+    rank () over (
+        order by
+            hanbai_tanka
+    ) as ranking,
+    dense_rank () over (
+        order by
+            hanbai_tanka
+    ) as dense_ranking,
+    row_number () over (
+        order by
+            hanbai_tanka
+    ) as row_num
+from
+    Shohin;
