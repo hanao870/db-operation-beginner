@@ -47,3 +47,30 @@ select
     ) as moving_avg
 from
     Shohin;
+
+-- ウィンドウ関数の order by はあくまでウィンドウ関数の計算をどういう順番で行うかを指定するものである
+-- 以下の SQL は ranking の降順に表示される保証はない
+select
+    shohin_id,
+    shohin_mei,
+    hanbai_tanka,
+    rank () over (
+        order by
+            hanbai_tanka
+    ) as ranking
+from
+    Shohin;
+
+-- ranking の降順で表示する SQL
+select
+    shohin_id,
+    shohin_mei,
+    hanbai_tanka,
+    rank () over (
+        order by
+            hanbai_tanka
+    ) as ranking
+from
+    Shohin
+order by
+    ranking;
