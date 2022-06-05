@@ -13,3 +13,16 @@ select
     ) as ranking
 from
     Shohin;
+
+-- 上記 SQL の partition by を除いた SQL
+select
+    shohin_id,
+    shohin_mei,
+    shohin_bunrui,
+    hanbai_tanka,
+    rank () over (
+        order by
+            hanbai_tanka
+    ) as ranking
+from
+    Shohin;
