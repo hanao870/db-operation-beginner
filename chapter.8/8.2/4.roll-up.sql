@@ -30,3 +30,14 @@ from
     Shohin
 group by
     rollup (shohin_bunrui);
+
+-- rollup なしの 2 つの group by
+select
+    shohin_bunrui,
+    torokubi,
+    sum(hanbai_tanka) as sum_tanka
+from
+    Shohin
+group by
+    shohin_bunrui,
+    torokubi;
