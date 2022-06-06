@@ -21,3 +21,12 @@ from
     Shohin
 group by
     shohin_bunrui;
+
+-- 合計行と小計を一度に求める
+select
+    shohin_bunrui,
+    sum(hanbai_tanka) as sum_tanka
+from
+    Shohin
+group by
+    rollup (shohin_bunrui);
